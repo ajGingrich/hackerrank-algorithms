@@ -7,6 +7,8 @@ A Node is defined as:
     }
 */
 
+//Note that I did not write this code and take no credit for it
+
 boolean hasCycle(Node head) {
         //use Floyd's cycle-finding algorithm
 
