@@ -58,5 +58,5 @@ We perform the following sequence of actions:
 6. Print the value at the head of the queue, **14**; *queue* = {14 ← 28}.
 7. Enqueue **60**; *queue* = {14 ← 28 ← 60}.
 8. Enqueue **78**; *queue* = {14 ← 28 ← 60 ← 78}.
-9. Dequeue the value at the head of the queue, **14**; *queue** = {28 ← 60 ← 78}.
-10. Dequeue the value at the head of the queue, **28**; *queue** = {60 ← 78}.
+9. Dequeue the value at the head of the queue, **14**; *queue* = {28 ← 60 ← 78}.
+10. Dequeue the value at the head of the queue, **28**; *queue* = {60 ← 78}.
