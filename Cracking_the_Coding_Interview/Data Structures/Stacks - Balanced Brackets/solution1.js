@@ -57,6 +57,9 @@ function main() {
                 }
             }
         }
+        if (stack.length != 0) {
+            result = "NO";
+        }
         console.log(result);
     }
 }
