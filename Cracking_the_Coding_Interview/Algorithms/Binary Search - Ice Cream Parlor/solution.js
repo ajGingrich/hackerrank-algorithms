@@ -59,7 +59,6 @@ function main() {
                     secondValue = a.indexOf(difference) + 1;
                     break;
                 }
-                continue;
             }
         }
         console.log(firstValue + " " + secondValue);

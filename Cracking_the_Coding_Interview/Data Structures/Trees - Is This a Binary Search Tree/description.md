@@ -23,7 +23,7 @@ You are not responsible for printing any output to stdout. Your function must re
 
 #### Sample Input
 
-![tree](https://testcases-diagram-generator.s3.amazonaws.com/undirected_graph/51b450a2f78262fb3326f379e08ec9dc)
+![alt-stuff](https://encrypt3d.files.wordpress.com/2010/09/nodes-in-binary-search-tree.png)
 
 #### Sample Output
 
