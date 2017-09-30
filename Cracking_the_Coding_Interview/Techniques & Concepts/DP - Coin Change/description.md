@@ -19,7 +19,7 @@ Given a number of dollars, *n*, and a list of dollar values for *m* distinct coi
 
 * 1 ≤ *c*<sub>*i*</sub> ≤ 50
 * 1 ≤ *n* ≤ 250
-* 1 ≤ *n* ≤ 50
+* 1 ≤ *m* ≤ 50
 * The list of coins contains *m* distinct integers where each integer denotes the dollar value of a coin available in an infinite quantity.
 
 #### Output Format

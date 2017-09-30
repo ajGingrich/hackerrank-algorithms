@@ -23,7 +23,7 @@ You are not responsible for printing any output to stdout. Your function must re
 
 #### Sample Input
 
-![alt-stuff](https://encrypt3d.files.wordpress.com/2010/09/nodes-in-binary-search-tree.png)
+![alt-stuff](http://www.algolist.net/img/bst-remove-case-2-3.png)
 
 #### Sample Output
 
