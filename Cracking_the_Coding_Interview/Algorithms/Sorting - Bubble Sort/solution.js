@@ -42,6 +42,7 @@ function main() {
         }
 
         // If no elements were swapped during a traversal, array is sorted
+        //this never breaks, add total swaps
         if (numberOfSwaps == 0) {
             break;
         }
