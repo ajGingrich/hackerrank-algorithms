@@ -1,5 +1,5 @@
 #!/bin/bash
 
-uniq -c | sed 's/[^ ]*/\1/g'
+uniq -c | tr -s ' ' | cut -c2-
 
-## not done..
+## uniq -c | tr -d [:blank:] | sed 's/.\{1\}/& /'
