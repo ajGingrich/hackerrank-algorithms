@@ -1,8 +1,12 @@
 #!/bin/bash
-input=($(cat))
-X=$input[0]
-Y=$input[1]
 
-echo "X: $X, Y: $Y"
+read x
+read y
 
-# start comparing numbers..
+if [ $x -gt $y ]; then
+    echo 'X is greater than Y'
+elif [ $x -eq $y ]; then
+    echo 'X is equal to Y'
+else
+    echo 'X is less than Y'
+fi
