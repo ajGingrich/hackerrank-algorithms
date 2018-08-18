@@ -14,3 +14,13 @@
 
 # Sample Output
 # 5.000
+
+read N
+sum=0
+
+for x in `seq 1 $N`; do
+    read val
+    sum=$((sum+val))
+done
+
+printf "%.3f" $(echo $sum/$N | bc -l )
