@@ -14,6 +14,22 @@ verticaladjustment=0
 for x in `seq 1 $graphwidth`; do baseline+="_"; done
 for y in `seq 1 $graphheight`; do res[$y]=$baseline; done
 
+# CODE IS TERRIBLE. NOT PROUD
+
+function createBranch {
+  center=$1
+  adjustment=$2
+  width=$3
+
+  res[$baseposition]=$(echo ${res[$baseposition]} | sed s/./1/$(($center-$adjustment)))
+  res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center-$adjustment)-$width)))
+  res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center-$adjustment)+$width)))
+
+  res[$baseposition]=$(echo ${res[$baseposition]} | sed s/./1/$(($center+$adjustment)))
+  res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center+$adjustment)-$width)))
+  res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center+$adjustment)+$width)))
+}
+
 # modify lines
 for i in `seq 1 $n`; do
     for c in `seq 1 $height`; do
@@ -22,13 +38,7 @@ for i in `seq 1 $n`; do
 
         # create left and right outer branches
         horizontaladjustment=$(($verticaladjustment/2))
-        res[$baseposition]=$(echo ${res[$baseposition]} | sed s/./1/$(($center-$horizontaladjustment)))
-        res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center-$horizontaladjustment)-$c)))
-        res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center-$horizontaladjustment)+$c)))
-
-        res[$baseposition]=$(echo ${res[$baseposition]} | sed s/./1/$(($center+$horizontaladjustment)))
-        res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center+$horizontaladjustment)-$c)))
-        res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$((($center+$horizontaladjustment)+$c)))
+        createBranch $center $horizontaladjustment $c
 
         # inner branches
         if [ $numberbranches -gt 2 ]; then
@@ -46,7 +56,6 @@ for i in `seq 1 $n`; do
             res[$branchline]=$(echo ${res[$branchline]} | sed s/./1/$(($left+$c)))
 
             right=$(($center+$horizontaladjustment-$height*4*$r))
-            # left=$(($center-$horizontaladjustment+$height*8))
           done
         fi
     done
