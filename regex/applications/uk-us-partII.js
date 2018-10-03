@@ -11,8 +11,8 @@ function processData(input) {
 function getDifferences({ words, n, t, sentences, lines }) {
     Array.from(Array(t)).map((_, i) => {
         let count = 0
-        const american = words[i].slice(0, words[i].length - 2) + 'se'
-        const re = RegExp(`(${words[i]})|(${american})`, 'g')
+        const american = words[i].replace(/our/g, 'or')
+        const re = RegExp(`(\\b${words[i]}\\b)|(\\b(${american})\\b)`, 'g')
 
         Array.from(Array(n)).map((_, j) => {
             count += (sentences[j].match(re) || []).length
