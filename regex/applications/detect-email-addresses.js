@@ -3,10 +3,8 @@ function processData(input) {
     const n = lines.shift()
     const text = lines.join(' ')
     const res = []
-    const emails = (text.match(/[a-zA-Z_]+@[a-zA-Z]+\.[a-zA-Z]+/g) || []).map((email) => res.push(email))
+    const emails = (text.match(/[\.a-zA-Z_]+@[a-zA-Z]+\.[a-zA-Z\.]+[a-zA-Z]+/g) || []).map((email) => res.push(email))
 
-
-    console.log(res.length)
     console.log(res.filter(onlyUnique).sort().join(';'))
 }
 
